@@ -1,28 +1,22 @@
-/**
- * CSS file for 'Rockets in Flight'
- *
- * Developed by Brett Alton <info@brettalton.com>
- * http://brettalton.com
- *
+/******************
+ * CSS file for UPX
+ * Developed by Brett Alton <brett.jr.alton@gmail.com>, modified by Ronan Jouchet <ronan@jouchet.fr>
  * Licensed under GPLv3
- */
+ ******************/
 
-/**
- * Depends on 960.gs
- */
 @import url('960.css');
 @import url('reset.css');
+@import url('slimbox2.css');
 
-
-/**
- * Divs
- */
+/************
+ * Toplevel *
+ ************/
 #header {
 	height: 115px;
 	padding: 10px 0 7px 0;
 }
 
-#slides {
+.slides {
 	height: 236px;
 	background: url('../img/slides-bg-extended.png') top center no-repeat #171717;
 }
@@ -37,70 +31,28 @@
 	padding: 1em 0;
 }
 
-/**
- * Tags
- */
 body {
-	background-color: #4b4b4b !important;
+	background-color: #71588F !important;
+    font: 13px/1.5 'Helvetica Neue', 'Tahoma', 'DejaVu Sans', 'Liberation Sans', 'FreeSans', 'Bitstream Vera Sans', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-p,
-a {
-	font: 13px/1.5 'Helvetica Neue', Tahoma, 'DejaVu Sans', 'Liberation Sans', FreeSans, 'Bitstream Vera Sans', sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-	font-weight: bold;
-}
-
-h1 {
-	font-size:28px !important;
-}
-
-h2 {
-	font-size:23px !important;
-}
-
-h3 {
-	font-size:19px !important;
-}
-
-h4 {
-	font-size:17px !important;
-}
-
-h5 {
-	font-size:14px !important;
-}
-
-h6 {
-	font-size:11px !important;
-}
+h1,h2 {font-weight: bold;}
+h1 {font-size:28px !important;}
+h2 {font-size:23px !important;}
 
 abbr {
 	border-bottom: 1px dotted #ccc;
 }
 
-/**
- * Div-specific tags
- */
+/**********
+ * Header *
+ **********/
 #header h1 a {
-	width: 250px;
-	height: 115px;
-	float: left;
-	background: url('../img/logo.png') top left no-repeat #4b4b4b;
+	width: 320px;
+	height: 140px;
+	position: absolute;
+        top: 10px;
+	background: url('../img/upx-logo-wide.png') top left no-repeat;
 }
 
 #header #top_menu {
@@ -123,11 +75,11 @@ abbr {
 	font-weight: normal;
 	font-size: 14px;
 	text-decoration: none;
-	text-transform: uppercase;
+	font-variant:small-caps; /*text-transform: uppercase;*/
 	letter-spacing: 1px;
 	height: 25px;
-	border-right: 1px solid #3C3C3C;
-	border-left: 1px solid #565656;
+	border-right: 1px solid #5D4975;
+	border-left: 1px solid #8568A8;
 }
 
 #header #top_menu a:hover,
@@ -143,23 +95,19 @@ abbr {
 	border-right: none;
 }
 
-#download h2,
-#download p,
-#slides #text ul li,
-#slides #text h1 {
-	color: #fff;
-	text-align: right;
-}
-
-#slides #text {
+.slides #text {
 	margin-top: 30px;
 }
 
-#slides .slide img{
+.slides .slide img{
 	margin-top: 15px;
 }
 
-a#download{
+/************
+ * Download *
+ ************/
+#download{
+    display: block;
 	width: 380px;
 	height: 125px;
 	margin-top: 25px;
@@ -167,27 +115,48 @@ a#download{
 	background: url('../img/download_now-sprite.png') 0 0 no-repeat;
 	text-decoration: none;
 }
-a#download:hover{
+#download:hover{
 	background: url('../img/download_now-sprite.png') 0 -125px no-repeat;
 }
 
-#download h2{
-	margin: 30px 40px 0 0;
-	color: #000;
-	font-size: 26px !important;
+#download:hover .dl_title{
+	text-decoration: underline !important;
 }
 
-#download p{
-	margin: -5px 40px 0 0;
-	font-size: 15px !important;
+#download .dl_title,
+#download .dl_subtitle,
+.slides #text ul li,
+.slides #text h1 {
+    display: block;
+	color: #fff;
+	text-align: right;
+	text-decoration: none;    
 }
 
+#download .dl_title {
+	margin: 35px 40px 0 0;
+	color: #111;
+	font-size: 23px !important;
+	font-weight: bold;
+}
+
+#download .dl_subtitle {
+	margin: -3px 40px 0 0;
+	color: #444;
+	font-size: 13px !important;
+    font-weight: bold;
+}
+
+/********
+ * Main *
+ ********/
 #main h2{
 	margin-top: 10px;
 }
 
 #main ul,
-#main p{
+#main p,
+#main table{
 	margin-left: 20px;
 	padding: 5px 0;
 }
@@ -204,15 +173,18 @@ a#download:hover{
 	margin-left: 20px;
 }
 
-#main a {
-	color: #F99505;
-	text-decoration: underline;
+a {
+	color: #166E00;
+    text-decoration: underline;
 }
 
 #main a:hover {
-	color: #BA3400;
+	color: #AA2200;
 }
 
+/**********
+ * Footer *
+ **********/
 #footer p,
 #footer a{
 	font-size: 10px;
@@ -232,3 +204,32 @@ a#download:hover{
 #footer a:hover {
 	color: #aaa;
 }
+
+/**********
+ * Tables *
+ **********/
+table, th, td {
+    margin-top: 8px;
+    text-align:left;
+    border: none;
+}
+
+table a {
+    text-decoration: none;
+}
+
+th {
+    padding: 3px;
+    font-size:110%;
+    background-color:#71588F;
+    color:#fff;
+}
+
+td {
+    padding:3px;
+}
+
+tr.alt td {
+    background-color:#E2DBE3;
+}
+
